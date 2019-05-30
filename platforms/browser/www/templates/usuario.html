@@ -1,0 +1,52 @@
+<ion-view title="InsuTOOL" id="presentacion">
+
+    <ion-content padding="false" class="has-header entrada" ng-controller="datosCtrl" data-ng-init="usuario_leer_Datos()">
+
+
+        <form  class="list" style="text-align: center; margin-top: 60px;" >
+            
+            <h3 style="color: white;"> Datos del usuario </h3>
+
+            <div class="caja-login" style="padding-bottom: 20px;">
+                
+                
+
+                <ion-list id="login-list2">
+
+                    <label class="item item-input-login" id="login-input1">
+                        <input class="input-login" type="text" ng-model="regEmail" placeholder="E-mail">
+                    </label>
+                    <label class="item item-input-login" id="login-input2">
+                        <input class="input-login" type="text" ng-model="regPassword" placeholder="Contraseña">
+                    </label>
+
+                    <div style=" margin-top: 20px;"> </div>
+
+                    <label class="item item-input-login" id="login-input1">
+                        <input class="input-login" type="text" ng-model="regNombre" placeholder="Nombre">
+                    </label>
+                    <label class="item item-input-login" id="login-input2">
+                        <input class="input-login" type="text" ng-model="regApellidos" placeholder="Apellidos">
+                    </label>
+                    <label class="item item-input-login" id="login-input1">
+                        <input class="input-login" type="text" ng-model="regNif" placeholder="NIF">
+                    </label>
+                    <label class="item item-input-login" id="login-input2">
+                        <input class="input-login" type="text" ng-model="regProvincia" placeholder="Provincia">
+                    </label>
+                    <input class="input-login" type="hidden" ng-model="regId">
+                    
+
+                </ion-list>
+                
+                
+            </div>
+            <div class="spacer" style="height: 20px;"></div>
+            <a id="login-button5" class="boton-login" ng-click="registro()">Actualizar</a>
+
+            <div class="spacer" style="height: 20px;"></div>
+        </form>
+
+    </ion-content>
+
+</ion-view>

@@ -1,0 +1,132 @@
+
+<ion-view title="6. Pautas con premezclas" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>6</h1>
+                <p>Pautas con premezclas<br><b>CAMBIAR</b></p>
+            </div>
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Seleccionar tipo de premezcla 
+
+                </div>
+
+                    <table class="table table-bordered table-striped" style="margin-bottom: 0px;" >
+                   
+                    <tbody>
+
+                        <tr>
+                            <td>Premezcla 25-75</td>
+
+                            <td style="width: 20px;"><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="premezcla_25_75" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Premezcla 30-70</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="premezcla_30_70" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Premezcla 50-50</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="premezcla_50_50" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                       
+                    </tbody>
+                </table>
+            </div>
+            
+
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    ¿Cuántas unidades de insulina al día?
+
+                </div>
+
+                <div class="list" style="margin-bottom: 0px;" ng-show="premezcla_25_75 === true">
+                    <div style=" margin-top: 15px; text-align: center;">Premezcla 25-75 </div>
+
+                    <input type="number" class="input-login" name="unidades" ng-model="unidades_cambio_25_75" min="0" max="200" value="{{unidades_cambio_25_75}}" ng-change="updateStorage()" limit-to-max>
+
+                </div>
+                <div class="list" style="margin-bottom: 0px;" ng-show="premezcla_30_70 === true">
+                    <div style=" margin-top: 15px; text-align: center;">Premezcla 30-70 </div>
+
+                    <input type="number" class="input-login" name="unidades" ng-model="unidades_cambio_30_70" min="0" max="200" value="{{unidades_cambio_30_70}}" ng-change="updateStorage()" limit-to-max>
+
+                </div>
+                <div class="list" style="margin-bottom: 0px;" ng-show="premezcla_50_50 === true">
+                    <div style=" margin-top: 15px; text-align: center;">Premezcla 50-50 </div>
+
+                    <input type="number" class="input-login" name="unidades" ng-model="unidades_cambio_50_50" min="0" max="200" value="{{unidades_cambio_50_50}}" ng-change="updateStorage()" limit-to-max>
+
+                </div>
+
+            </div>
+
+
+            <div class="card" >
+                <div class="item item-divider" style="text-align: center;">
+
+                    Cambiar a:
+
+                </div>
+
+                <ion-radio ng-repeat="item in cambio_inicioList"
+                           ng-value="item.value"
+                           ng-model="data13.cambio_inicioList_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="cambio">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="button-bar" style="padding: 10px;">
+                <a class="button button-balanced button2" ui-sref="menu.06-02-cambiar">CONTINUAR</a>
+            </div>
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

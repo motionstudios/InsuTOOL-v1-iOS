@@ -1,0 +1,93 @@
+
+<ion-view title="6. Pautas con premezclas" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>6</h1>
+                <p>Pautas con premezclas<br><b>AJUSTAR</b></p>
+            </div>
+
+            
+            <div class="card" >
+                <div class="item item-divider" style="text-align: center;">
+
+                    Medición glucosa
+
+                </div>
+                
+                <ion-radio ng-repeat="item in glucemia_premezclaList"
+                           ng-value="item.value"
+                           ng-model="data12.glucemia_premezclaList_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="momento">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+            
+            
+            <div class="card" >
+                <div class="item item-divider" style="text-align: center;">
+
+                    Glucemia 
+                    <span ng-if="glucemia_premezcla === 'Posprandial'">posprandial</span>
+                    <span ng-if="glucemia_premezcla === 'Preprandial'">preprandial</span> 
+                    (mg/dl)
+
+                </div>
+               
+                <div class="list" style="text-align: center;">
+                        <div style=" margin-top: 15px;"> </div>
+                        <span ng-if="glucemia_premezcla === 'Posprandial'">Después del desayuno</span>
+                        <span ng-if="glucemia_premezcla === 'Preprandial'">Antes del desayuno</span>
+                        
+                        <input type="number" class="input-login" name="unidades" ng-model="glucemia_1"  value="{{glucemia_1}}" ng-change="updateStorage()" >
+                        
+                        <span ng-if="glucemia_premezcla === 'Posprandial'">Después de la cena</span>
+                        <span ng-if="glucemia_premezcla === 'Preprandial'">Antes de la cena</span>
+                        
+                        <input type="number" class="input-login" name="unidades" ng-model="glucemia_2"  value="{{glucemia_2}}" ng-change="updateStorage()" >
+
+                </div>
+                
+            </div>
+            
+            <div class="card resultado" ng-if="ajuste_dosis_premezcla != null">
+
+                <div class="item item-divider" style="text-align: center">
+                    RESULTADO
+                </div>
+
+                <div class="item item-text-wrap" style="text-align: center">
+                    
+                    Ajuste de dosis de la insulina previa desayuno: <br><b>{{ajuste_dosis_premezcla}}</b>
+                    <br><br>
+                    Ajuste de dosis de la insulina previa cena: <br><b>{{ajuste_dosis_premezcla_2}}</b>
+
+                </div>
+
+            </div>
+            
+            <div class="button-bar" style="padding: 10px;" ng-if="ajuste_dosis_premezcla != null" ng-controller="usoCtrl">
+                <a class="button button-balanced button2" ui-sref="menu.index" ng-click="uso('6', 'Ajustar')">FIN</a>
+            </div>
+
+            <div class="button-bar" style="padding: 10px;">
+                <a class="button button-balanced button2" ng-click="glucemia_premezcla_final()">CALCULAR</a>
+            </div>
+            
+            
+<div class="spacer" style="width: 300px; height: 100px;"></div>
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

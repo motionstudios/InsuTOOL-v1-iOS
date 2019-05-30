@@ -1,0 +1,186 @@
+
+<ion-view title="7. Hiperglucemia corticoidea" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>7</h1>
+                <p>Hiperglucemia corticoidea</p>
+            </div>
+
+
+            <div class="spacer" style="width: 300px; height: 0px;"></div>
+            
+            <!--
+
+            <div class="card" >
+                <div class="item item-divider" style="text-align: center;">
+
+                    DATOS INICIALES
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    Peso del paciente 
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+                    78 kg
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    GLUCOCORTICOIDES
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+                    ....
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    Dosis de glucocorticoide
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+                    55 mg
+
+                </div>
+
+
+            </div>
+            -->
+
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    ¿Qué fármacos ADNI toma el paciente?
+
+                </div>
+
+                <!-- medicamentos -->
+                <table class="table table-bordered table-striped" >
+
+                    <tbody>
+
+                        <tr>
+                            <td>Metformina</td>
+
+                            <td style="width: 20px;"><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Metformina" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sulfonilureas</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Sulfonilureas" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Repaglinidina</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Repaglinidina" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>iDPP4</td>
+
+                            <td><label class="toggle toggle-assertive" >
+                                    <input type="checkbox" ng-model="IDPP4" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>aGLP1</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="aGLP1" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr >
+                            <td>iSGLT2</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="iSGLT2" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Pioglitazona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Pioglitazona" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Acarbosa</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Acarbosa" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class="card">
+                <div class="item item-divider " style="text-align: center !important;">
+                    Duración del tratamiento
+                </div>
+                <div class="button-bar" style="padding: 10px;">
+                    <a class="button button-balanced button2" ui-sref="menu.07-03">&le; 3 días</a>
+                    <a class="button button-assertive button2" ui-sref="menu.07-01-01">> 3 días</a>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

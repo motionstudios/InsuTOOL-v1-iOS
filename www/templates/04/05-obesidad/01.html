@@ -1,0 +1,165 @@
+<ion-view title="4. Situaciones especiales" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>4</h1>
+                <p>Situaciones especiales</p>
+            </div>
+
+            <div class="item item-divider" style="text-align: center;">
+
+                Sobrepeso/obesidad
+
+            </div>
+
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    IMC (kg/m<sup>2</sup>)
+
+                </div>
+
+                <ion-radio ng-repeat="item in imc_sobrepesoList"
+                           ng-value="item.value"
+                           ng-model="data20.imc_sobrepesoList_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="imc_sobrepeso">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+            <div ng-if="imc_sobrepeso === 'imc_1'">
+
+                <div class="card resultado" ng-if="iSGLT2 !== true || IDPP4 !== true">
+                    <div class="item item-divider" style="text-align: center;">
+                        RESULTADO
+                    </div>
+                    <div class="item item-text-wrap">
+
+                        <b>Opciones: de mayor a menor prioridad</b>
+                        <br><br>
+                        <span ng-if="iSGLT2 !== true">- iSGLT2 <br></span>
+                        <span ng-if="IDPP4 !== true">- iDPP4</span>
+
+                    </div>
+                </div>
+
+                <div ng-if="iSGLT2 === true && IDPP4 === true">
+                    <div class="button-bar" style="padding: 10px;">
+
+                        <a class="button button-balanced button2" ui-sref="menu.01-final_insulina" ng-show="estado_algoritmo === '01'">Inicio insulinización basal</a>
+                        <a class="button button-balanced button2" ui-sref="menu.01" ng-show="estado_algoritmo !== '01' && estado_algoritmo !== '03'">Inicio insulinización basal</a>
+
+                    </div>
+                    <div class="button-bar" style="padding: 10px;">
+
+                        <a class="button button-assertive button2" ui-sref="menu.05" ng-show="estado_algoritmo === '03' || estado_algoritmo !== '01'">Intensificación insulinización</a>
+                    </div>
+                </div>
+
+                <div class="card" ng-if="iSGLT2 !== true || IDPP4 !== true">
+                    <div class="item item-divider " style="text-align: center !important;">
+                        ¿Cumple objetivos?
+                    </div>
+                    <div class="button-bar" style="padding: 10px;">
+                        <a class="button button-balanced button2" ui-sref="menu.04-obesidad-02">SÍ</a>
+                        <a class="button button-assertive button2" ui-sref="menu.04-obesidad-03" >NO</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div ng-if="imc_sobrepeso === 'imc_2'">
+                <div class="card resultado" ng-if="iSGLT2 !== true || aGLP1 !== true">
+                    <div class="item item-divider" style="text-align: center;">
+                        RESULTADO
+                    </div>
+                    <div class="item item-text-wrap">
+
+                        <b>Opciones: de mayor a menor prioridad</b>
+                        <br><br>
+                        <span ng-if="iSGLT2 !== true">- iSGLT2 <br></span>
+                        <span ng-if="aGLP1 !== true">- aGLP1</span>
+
+                    </div>
+                </div>
+
+                <div ng-if="iSGLT2 === true && aGLP1 === true">
+                    <div class="button-bar" style="padding: 10px;">
+
+                        <a class="button button-balanced button2" ui-sref="menu.01-final_insulina" ng-show="estado_algoritmo === '01'">Inicio insulinización basal</a>
+                        <a class="button button-balanced button2" ui-sref="menu.01" ng-show="estado_algoritmo !== '01' && estado_algoritmo !== '03'">Inicio insulinización basal</a>
+
+                    </div>
+                    <div class="button-bar" style="padding: 10px;">
+
+                        <a class="button button-assertive button2" ui-sref="menu.05" ng-show="estado_algoritmo === '03' || estado_algoritmo !== '01'">Intensificación insulinización</a>
+                    </div>
+                </div>
+
+                <div class="card" ng-if="iSGLT2 !== true || aGLP1 !== true">
+                    <div class="item item-divider " style="text-align: center !important;">
+                        ¿Cumple objetivos?
+                    </div>
+                    <div class="button-bar" style="padding: 10px;">
+                        <a class="button button-balanced button2" ui-sref="menu.04-obesidad-02">SÍ</a>
+                        <a class="button button-assertive button2" ui-sref="menu.04-obesidad-03" >NO</a>
+                    </div>
+
+                </div>
+            </div>
+
+            <div ng-if="imc_sobrepeso === 'imc_3'">
+                <div class="card resultado" ng-if="iSGLT2 !== true || aGLP1 !== true">
+                    <div class="item item-divider" style="text-align: center;">
+                        RESULTADO
+                    </div>
+                    <div class="item item-text-wrap">
+
+                        <b>Opciones: de mayor a menor prioridad</b>
+                        <br><br>
+                        <span ng-if="aGLP1 !== true">- aGLP1 <br></span>
+                        <span ng-if="iSGLT2 !== true">- iSGLT2</span>
+
+                    </div>
+                </div>
+
+                <div ng-if="iSGLT2 === true && aGLP1 === true">
+                    <div class="button-bar" style="padding: 10px;">
+
+                        <a class="button button-balanced button2" ui-sref="menu.01-final_insulina" ng-show="estado_algoritmo === '01'">Inicio insulinización basal</a>
+                        <a class="button button-balanced button2" ui-sref="menu.01" ng-show="estado_algoritmo !== '01' && estado_algoritmo !== '03'">Inicio insulinización basal</a>
+
+                    </div>
+                    <div class="button-bar" style="padding: 10px;">
+
+                        <a class="button button-assertive button2" ui-sref="menu.05" ng-show="estado_algoritmo === '03' || estado_algoritmo !== '01'">Intensificación insulinización</a>
+                    </div>
+                </div>
+                
+                <div class="card" ng-if="iSGLT2 !== true || aGLP1 !== true">
+                    <div class="item item-divider " style="text-align: center !important;">
+                        ¿Cumple objetivos?
+                    </div>
+                    <div class="button-bar" style="padding: 10px;">
+                        <a class="button button-balanced button2" ui-sref="menu.04-obesidad-02">SÍ</a>
+                        <a class="button button-assertive button2" ui-sref="menu.04-obesidad-03" >NO</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+
+    </ion-content>
+
+
+</ion-view>

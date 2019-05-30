@@ -1,0 +1,39 @@
+<ion-view title="7. Hiperglucemia corticoidea" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>7</h1>
+                <p>Hiperglucemia corticoidea</p>
+            </div>
+
+
+
+            <div class="card">
+                <div class="item item-divider " style="text-align: center !important;">
+                    Glucemias en ayunas o preprandiales
+                </div>
+                <div class="button-bar" style="padding: 10px;">
+                    
+                    <a class="button button-balanced button2" ui-sref="" ng-if='gluco_seleccionado === "1"'>< 200 mg/dl</a>
+                    <a class="button button-balanced button2" ui-sref="menu.07-01-04-intermedia" ng-if='gluco_seleccionado === "2"'>< 200 mg/dl</a>
+                    <a class="button button-balanced button2" ui-sref="menu.07-01-04-prolongado" ng-if='gluco_seleccionado === "3"'>< 200 mg/dl</a>
+                    <a class="button button-balanced button2" ui-sref="menu.07-01-04-prolongado" ng-if='gluco_seleccionado === "4"'>< 200 mg/dl</a>
+                    
+                    
+                    <a class="button button-assertive button2" ui-sref="menu.07-03-01">> 200 mg/dl</a>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

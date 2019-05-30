@@ -1,0 +1,38 @@
+
+<ion-view title="5. Pautas con insulina prandial" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>5</h1>
+                <p>Pautas con insulina prandial</p>
+            </div>
+
+
+            <div class="spacer" style="width: 300px; height: 0px;"></div>
+
+            <div class="card resultado" ng-if="peor_control != 'null'">
+
+                <div class="item item-text-wrap" style="text-align: center">
+
+                    <b>Iniciar 4 UI ultrarrápida antes <span ng-if="peor_control != 'Desayuno'">de la</span><span ng-if="peor_control === 'Desayuno'">del</span> {{peor_control2}}</b>
+
+                </div>
+
+            </div>
+
+
+            <div class="button-bar" style="padding: 10px;">
+                <a class="button button-balanced button2" ui-sref="menu.index">Fin</a>
+            </div>
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

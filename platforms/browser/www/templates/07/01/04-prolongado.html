@@ -1,0 +1,83 @@
+<ion-view title="7. Hiperglucemia corticoidea" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>7</h1>
+                <p>Hiperglucemia corticoidea</p>
+            </div>
+
+
+            <div class="spacer" style="width: 300px; height: 0px;"></div>
+
+            <div class="card">
+                <div class="item item-divider " style="text-align: center !important;">
+                    Acción prolongada o administración intraarticular
+                </div>
+
+            </div>
+
+            <div class="card" ng-show="Repaglinidina !== true || IDPP4 !== true || Sulfonilureas !== true">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Escoger una opción:
+
+                </div>
+
+                <ion-radio ng-repeat="item in prolongado_farmacosList"
+                           ng-value="item.value"
+                           ng-model="data23.prolongado_farmacosList_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="pinchazos">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+
+            <div class="card resultado" ng-if="prolongado_farmacos === 'Repaglinidina'">
+                <div class="item item-divider " style="text-align: center !important;">
+                    IMPORTANTE
+                </div>
+                <div class="button-bar" style="padding: 10px;">
+
+                    Iniciar con 0,5 mg antes de comidas con posprandiales superiores de 180 mg/dl. <br><br>
+                    Aumentar progresivamente hasta 4 mg para mantener glucemias posprandiales inferiores a 180 mg/dl.
+
+                </div>
+
+            </div>
+            
+            <div class="card resultado" ng-if="prolongado_farmacos === 'gliclazida'">
+                <div class="item item-divider " style="text-align: center !important;">
+                    IMPORTANTE
+                </div>
+                <div class="button-bar" style="padding: 10px;">
+
+                    Iniciar con dosis mínima y aumentar progresivamente para logar objetivos glucémicos.
+
+                </div>
+
+            </div>
+            
+
+            <div class="button-bar" style="padding: 10px;" ng-show='Repaglinidina !== true && IDPP4 !== true && Sulfonilureas !== true'>
+                <a class="button button-balanced button2" ui-sref="menu.07-01-05">CONTINUAR</a>
+            </div>
+            
+            <div class="button-bar" style="padding: 10px;" ng-show="Repaglinidina === true || IDPP4 === true || Sulfonilureas === true">
+                <a class="button button-balanced button2" ui-sref="menu.07-03-01">CONTINUAR INSULINIZAR</a>
+            </div>
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>
+

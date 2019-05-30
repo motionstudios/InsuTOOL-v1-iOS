@@ -1,0 +1,122 @@
+
+<ion-view title="7. Hiperglucemia corticoidea" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>7</h1>
+                <p>Hiperglucemia corticoidea</p>
+            </div>
+
+
+            <div class="spacer" style="width: 300px; height: 0px;"></div>
+
+            <div class="card" >
+                <div class="item item-divider" style="text-align: center;">
+
+                    DATOS
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    Peso del paciente 
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+                    {{corti_peso}} kg
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    GLUCOCORTICOIDES
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+
+                    <span ng-if='Cortisona === true'>Cortisona</span>
+                    <span ng-if='Hidrocortisona === true'>Hidrocortisona</span>
+                    <span ng-if='Prednisona === true'>Prednisona</span>
+                    <span ng-if='Prednisolona === true'>Prednisolona</span>
+                    <span ng-if='Metilprednisolona === true'>Metilprednisolona</span>
+                    <span ng-if='Deflazacort === true'>Deflazacort</span>
+                    <span ng-if='Fludocortisona === true'>Fludocortisona</span>
+                    <span ng-if='Triamcinolona === true'>Triamcinolona</span>
+                    <span ng-if='Betametasona === true'>Betametasona</span>
+                    <span ng-if='Dexametasona === true'>Dexametasona</span>
+                    <span ng-if='Triamcinolona_acetonico === true'>Triamcinolona acetónido</span>
+                    <span ng-if='Metilprednisolona_acetato === true'>Metilprednisolona acetato</span>
+                    <span ng-if='Parametasona === true'>Parametasona</span>
+
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    Dosis de glucocorticoide
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+                    {{dosis_gluco}} mg
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    ¿Cuántas veces al día?
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+                    {{al_dia_gluco}} al día
+
+                </div>
+                <div class="item item-divider" style="text-align: center;">
+
+                    Fármaco/s ADNI
+
+                </div>
+                <div class="item item-text-wrap" style="text-align: center;">
+
+                    <span ng-if='Metformina === true'>Metformina<br></span>
+                    <span ng-if='Sulfonilureas === true'>Sulfonilureas<br></span>
+                    <span ng-if='Repaglinidina === true'>Repaglinidina<br></span>
+                    <span ng-if='IDPP4 === true'>iDPP4<br></span>
+                    <span ng-if='aGLP1 === true'>aGLP1<br></span>
+                    <span ng-if='iSGLT2 === true'>iSGLT2<br></span>
+                    <span ng-if='Pioglitazona === true'>Pioglitazona<br></span>
+                    <span ng-if='Acarbosa === true'>Acarbosa</span>
+                    
+                </div>
+
+
+            </div>
+
+            <div class="card resultado" >
+                <div class="item item-divider" style="text-align: center;">
+
+                    RESULTADO
+
+                </div>
+                <div class="item item-text-wrap" >
+
+                    Mantener tratamiento.
+
+                </div>
+
+            </div>
+
+
+            <div class="button-bar" style="padding: 10px;" ng-controller="usoCtrl">
+                <a class="button button-balanced button2" ui-sref="menu.index" ng-click="uso('7', 'Mantener tratamiento')">FIN</a>
+            </div>
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

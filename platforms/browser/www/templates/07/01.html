@@ -1,0 +1,277 @@
+<ion-view title="7. Hiperglucemia corticoidea" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>7</h1>
+                <p>Hiperglucemia corticoidea</p>
+            </div>
+
+
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Peso del paciente (kg)
+
+                </div>
+                <div class="list">
+                    <div style=" margin-top: 15px;"> </div>
+
+                    <input type="number" class="input-login" name="unidades" ng-model="corti_peso" min="0" max="200" value="{{corti_peso}}" ng-change="updateStorage()" limit-to-max>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    GLUCOCORTICOIDES<br>Seleccione una opción
+
+                </div>
+
+                <!-- medicamentos -->
+                <table class="table table-bordered table-striped" >
+                    <!--
+                    <thead style="background-color:  #DDDDDD">
+                        <tr>
+                            <th>Acción corta</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Cortisona</td>
+
+                            <td style="width: 20px;"><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Cortisona" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Hidrocortisona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Hidrocortisona" ng-change="updateStorage()">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>
+                    -->
+
+                    <thead style="background-color:  #DDDDDD">
+                        <tr>
+                            <th>Acción intermedia</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Prednisona</td>
+
+                            <td style="width: 20px;"><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Prednisona" ng-change="desactivar_cortis('Prednisona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Prednisolona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Prednisolona" ng-change="desactivar_cortis('Prednisolona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Metilprednisolona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Metilprednisolona" ng-change="desactivar_cortis('Metilprednisolona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Deflazacort</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Deflazacort" ng-change="desactivar_cortis('Deflazacort')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fludocortisona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Fludocortisona" ng-change="desactivar_cortis('Fludocortisona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Triamcinolona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Triamcinolona" ng-change="desactivar_cortis('Triamcinolona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+
+                    <thead style="background-color:  #DDDDDD">
+                        <tr>
+                            <th>Acción prolongada</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Betametasona</td>
+
+                            <td style="width: 20px;"><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Betametasona" ng-change="desactivar_cortis('Betametasona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Dexametasona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Dexametasona" ng-change="desactivar_cortis('Dexametasona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>    
+
+                    <thead style="background-color:  #DDDDDD">
+                        <tr>
+                            <th>Administración intraarticular</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Triamcinolona acetónido</td>
+
+                            <td style="width: 20px;"><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Triamcinolona_acetonico" ng-change="desactivar_cortis('Triamcinolona_acetonico')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Metilprednisolona acetato</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Metilprednisolona_acetato" ng-change="desactivar_cortis('Metilprednisolona_acetato')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Parametasona</td>
+
+                            <td><label class="toggle toggle-assertive">
+                                    <input type="checkbox" ng-model="Parametasona" ng-change="desactivar_cortis('Parametasona')">
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </td>
+                        </tr>
+                    </tbody>                     
+
+                    </tbody>
+
+                </table>
+            </div>
+
+
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Dosis de glucocorticoide (mg)
+
+                </div>
+                <div class="list">
+                    <div style=" margin-top: 15px;"> </div>
+
+                    <input type="number" class="input-login" name="unidades" ng-model="dosis_gluco" min="0" max="200" value="{{dosis_gluco}}" ng-change="updateStorage()" limit-to-max>
+
+                </div>
+            </div>
+
+            <div class="card" ng-show="gluco_seleccionado == '2'">
+                <div class="item item-divider" style="text-align: center;">
+
+                    ¿Cuántas veces al día? 
+
+                </div>
+
+                <ion-radio ng-repeat="item in al_dia_glucoList"
+                           ng-value="item.value"
+                           ng-model="data21.al_dia_glucoList_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="pinchazos">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+
+
+
+            <div class="button-bar" style="padding: 10px;">
+                <a class="button button-balanced button2" ui-sref="menu.07-02">CONTINUAR</a>
+            </div>
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

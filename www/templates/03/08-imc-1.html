@@ -1,0 +1,119 @@
+
+<ion-view title="3. Intensificación insulinización basal" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>3</h1>
+                <p>Intensificación insulinización basal</p>
+            </div>
+
+
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Índice de masa corporal <br>
+                    (IMC)
+
+                </div>            
+                <div class="list" style="text-align: center;">
+
+                    <div style=" margin-top: 15px;"> </div>
+
+                    <div style=" margin-top: 15px;"> </div>
+
+                    <h3>IMC: {{imc_manual}}</h3>
+
+                </div>
+
+            </div>
+
+            <!-- opcines < 25 imc -->
+            <div class="card" ng-if="imc_manual <= 25">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Seleccione una opción 
+
+                </div>
+                <ion-radio ng-repeat="item in opcion_1_List"
+                           ng-value="item.value"
+                           ng-model="data5.opcion_1_List_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="opcion_imc_1">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+
+
+            <!-- opcines 25,1 a 30 imc -->
+            <div class="card" ng-if="imc_manual > 25 && imc_manual <= 30">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Seleccione una opción
+
+                </div>
+                <ion-radio ng-repeat="item in opcion_2_List"
+                           ng-value="item.value"
+                           ng-model="data6.opcion_2_List_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="opcion_imc_2">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+
+            <!-- opcines 30,1 a 35 imc -->
+            <div class="card" ng-if="imc_manual > 30 && imc_manual <= 35">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Seleccione una opción
+
+                </div>
+                <ion-radio ng-repeat="item in opcion_3_List"
+                           ng-value="item.value"
+                           ng-model="data7.opcion_3_List_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="opcion_imc_3">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+
+            <!-- opcines 30,1 a 35 imc -->
+            <div class="card" ng-if="imc_manual > 35">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Seleccione una opción
+
+                </div>
+                <ion-radio ng-repeat="item in opcion_4_List"
+                           ng-value="item.value"
+                           ng-model="data8.opcion_4_List_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="opcion_imc_4">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+
+            <div class="button-bar" style="padding: 10px;" >
+                <a class="button button-balanced button2" ui-sref="menu.03-09-imc">CONTINUAR</a>
+            </div>
+
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

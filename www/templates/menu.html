@@ -1,0 +1,36 @@
+<ion-side-menus enable-menu-with-back-views="true" expose-aside-when="(min-width:800px)">
+
+    <ion-side-menu-content enable-menu-with-back-views="true">
+        <ion-nav-bar class="bar-stable bar-calm">
+            <ion-nav-back-button></ion-nav-back-button>
+
+            <ion-nav-buttons side="right" >
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content>
+
+    <ion-side-menu side="left" id="side-menu21 " expose-aside-when="large"  ng-controller="ProtectedController" >
+
+        <ion-content padding="false" class="side-menu-left fondo_menu">
+            <div style="height: 180px;"></div>
+            <ion-item id="menu-list-item3 " ui-sref="menu.presentacion" menu-close="" class="item-icon-left" ><i class="icon ion-ios-information" ></i> Presentación</ion-item>
+            <ion-item id="menu-list-item3 " ui-sref="menu.index" menu-close="" class="item-icon-left" ><i class="icon ion-ios-toggle" ></i> Inicio Algoritmos</ion-item>
+            <ion-item id="menu-list-item3 " ui-sref="menu.usuario" menu-close="" class="item-icon-left" ><i class="icon ion-ios-contact" ></i> Datos del usuario</ion-item>
+            
+            <!--<ion-item id="menu-list-item3 " ng-controller="vademecumCtrl" ng-click="GotoLink('https://intranet.euromedice.net/legales/politica/')" menu-close="" class="item-icon-left" ><i class="icon ion-ios-help" ></i> Soporte</ion-item> -->
+            <ion-item id="menu-list-item3 " ui-sref="login" menu-close="" class="item-icon-left" ng-controller="cerrarCtrl" ng-click="cerrar()"><i class="icon ion-log-out" ></i> Cerrar sesión</ion-item>  
+
+            <div class="reset_boton" ng-controller="resetTodo" ng-click="showReset()"><div style="color: #ffffff;">Borrar datos</div><img src="img/reset_boton.png" alt=""/></div>
+            <div style="height: 0px;"></div>
+            
+            <ion-item id="menu-list-item4 " ng-controller="vademecumCtrl" ng-click="GotoLink('http://www.redgdps.org/avisolegal.html')" class=" item-icon-right menu-list-item4">Aviso legal <i class="icon ion-ios-arrow-right"></i></ion-item>
+            <ion-item id="menu-list-item4 " ng-controller="vademecumCtrl" ng-click="GotoLink('http://www.redgdps.org/privacidad.html')" class=" item-icon-right menu-list-item4">Política de privacidad <i class="icon ion-ios-arrow-right"></i></ion-item>
+            <ion-item id="menu-list-item4 "  class="menu-list-item4">Copyright @ redGDPS</ion-item>
+        </ion-content>
+
+    </ion-side-menu>
+
+</ion-side-menus>

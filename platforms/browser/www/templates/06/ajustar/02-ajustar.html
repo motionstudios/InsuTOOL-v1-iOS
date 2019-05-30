@@ -1,0 +1,59 @@
+
+<ion-view title="6. Pautas con premezclas" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>6</h1>
+                <p>Pautas con premezclas<br><b>AJUSTAR</b></p>
+            </div>
+
+
+            <div class="spacer" style="width: 300px; height: 0px;"></div>
+
+            <div class="card" >
+                <div class="item item-divider" style="text-align: center">
+                    Datos de cálculo
+                </div>
+
+                <div class="item item-text-wrap">
+
+                    Tipo de insulina: <b>{{premezcla_inicio_final}}</b><br>
+                    Cantidad de insulina: <b>{{unidades_premezcla}} UI</b><br>
+                    Tipo de premezcla: <b>{{premezcla_tipo_final}}</b>
+
+                </div>
+
+            </div>
+
+            <div class="card resultado" >
+
+                <div class="item item-divider" style="text-align: center">
+                    RESULTADO
+                </div>
+
+                <div class="item item-text-wrap">
+
+                    - 60% Dosis total en desayuno: {{resultado_60}} UI<br>
+                    - 40% Dosis total en cena: {{resultado_40}} UI
+
+                </div>
+
+            </div>
+
+
+            <div class="button-bar" style="padding: 10px;">
+                <a class="button button-balanced button2" ui-sref="menu.06-03-ajustar">CONTINUAR</a>
+            </div>
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>

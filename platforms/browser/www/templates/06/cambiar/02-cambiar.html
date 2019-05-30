@@ -1,0 +1,120 @@
+
+<ion-view title="6. Pautas con premezclas" id="page1"  >
+
+    <ion-content padding="false" class="has-header fondo_contenido" ng-controller="testCtrl">
+
+        <div class="caja_contenido">
+
+            <div class="caja_algo">
+                <h1>6</h1>
+                <p>Pautas con premezclas<br><b>CAMBIAR</b></p>
+            </div>
+
+
+            <div class="spacer" style="width: 300px; height: 0px;"></div>
+
+            <div class="card" >
+                <div class="item item-divider" style="text-align: center">
+                    Datos de cálculo
+                </div>
+
+                <div class="item item-text-wrap">
+
+                    
+                    Tipo de premezcla: <b>{{premezcla_tipo_final_2}}</b><br>
+                    Cantidad de insulina: <b>{{unidades_cambio}} UI</b><br>
+                
+
+                </div>
+
+            </div>
+
+            <div class="card resultado" >
+
+                <div class="item item-divider" style="text-align: center">
+                    Resultado inicial
+                </div>
+
+                <div class="item item-text-wrap" ng-if="premezcla_tipo_2 === 'premezcla_30-70'">
+                    - Insulina basal: {{(resultado_basal_30_70).toFixed(0)}} UI<br>
+                    - Insulina prandial: {{(resultado_prandial_30_70).toFixed(0)}} UI
+                </div>
+
+                <div class="item item-text-wrap" ng-if="premezcla_tipo_2 === 'premezcla_25-75'">
+                    - Insulina basal: {{(resultado_basal_25_75).toFixed(0)}} UI<br>
+                    - Insulina prandial: {{(resultado_prandial_25_75).toFixed(0)}} UI
+                </div>
+
+                <div class="item item-text-wrap" ng-if="premezcla_tipo_2 === 'premezcla_50-50'">
+                    - Insulina basal: {{(resultado_basal_50_50).toFixed(0)}} UI<br>
+                    - Insulina prandial: {{(resultado_prandial_50_50).toFixed(0)}} UI
+                </div>
+
+            </div>
+
+
+            <!--  Insunina Basal   *********************** -->
+            <div class="card">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Seleccione una insulina basal
+
+                </div>
+
+                <ion-radio ng-repeat="item in Insulina_basalList"
+                           ng-value="item.value"
+                           ng-model="data16.Insulina_basalList_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="insulina_basal">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+            
+            <!--  Insunina Prandial   *********************** -->
+            <div class="card" ng-if="cambio_inicio == 'insulina_basal_plus' || cambio_inicio == 'insulina_bolo_basal'">
+                <div class="item item-divider" style="text-align: center;">
+
+                    Seleccione una insulina prandial
+
+                </div>
+
+                <ion-radio ng-repeat="item in Insulina_prandialList"
+                           ng-value="item.value"
+                           ng-model="data17.Insulina_prandialList_1" 
+                           ng-change="updateStorage()"
+                           class="lista"
+                           name="insulina_prandial">
+                    {{ item.text}}
+                </ion-radio>
+
+            </div>
+            
+            <div class="card" ng-if="cambio_inicio == 'insulina_basal_plus' || cambio_inicio == 'insulina_bolo_basal'">
+
+                <div class="item item-divider" >
+                    Tipos de insulinas rápidas
+                </div>
+                <div class="item item-text-wrap" >
+                    Utilizar preferentemente análogo ultrarrápido (insulina aspart de acción rápida), por su mayor eficacia y flexibilidad de manejo.<br><br>
+                    1.ª OPCIÓN: insulina aspart de acción rápida (FIASP<sup>&reg;</sup> 100 UI/ml).  Se administra desde 2 minutos antes de empezar a comer, con la posibilidad de administrarse hasta 20 minutos después del inicio de la comida.
+                    <br><br>
+                    2.ª OPCIÓN: aspart (NovoRapid<sup>&reg;</sup> 100 UI/ml), lispro (Humalog<sup>&reg;</sup> 100 o 200 UI/ml), glulisina (Apidra<sup>&reg;</sup> 100 UI/ml). Administrar 5-15 minutos antes del inicio de la comida.
+                </div>
+
+            </div>
+
+            <div class="button-bar" style="padding: 10px;">
+                <a class="button button-balanced button2" ui-sref="menu.06-03-cambiar">CONTINUAR</a>
+            </div>
+
+
+
+
+        </div>
+
+    </ion-content>
+
+
+</ion-view>
