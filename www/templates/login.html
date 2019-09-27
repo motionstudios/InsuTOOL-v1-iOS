@@ -6,7 +6,7 @@
     <ion-content padding="true"  class="manual-ios-statusbar-padding fondo" ng-controller="ProtectedController3" delegate-handle="myPageDelegate">
         
         <!-- formulario Login -->
-        <form id="login-form1" class="list" ng-controller="postController" ng-class="css_1" >
+        <form id="login-form1" class="list" ng-controller="postController" ng-class="css_1" ng-show="showsecondCard">
 
             <div id="logo-login" id="top"><img src="img/login-logo.png"></div>
 
@@ -38,7 +38,7 @@
         </form>
 
         <!-- formulario registro -->
-        <form id="login-form2" class="list" ng-controller="registroCtrl" ng-class="css_2">
+        <form id="login-form2" class="list" ng-controller="registroCtrl" ng-class="css_2" ng-show="showsecondCard">
 
             <div class="caja-textos-login"> 
                 <a href="#" ng-click="cambiar_a_login()"><div class="login-texto" style="color: #FFB4B8 !important;">Acceso</div></a>
@@ -95,6 +95,39 @@
         </form>
 
 
+        <div id="discraimer"  ng-show="showstartCard"> 
+                <div>
+                    <p>La información contenida en esta aplicación está dirigida exclusivamente a profesionales de la salud, facultados para prescribir y administrar medicamentos. 
+                        <br><br>
+                        La toma de decisiones debe basarse únicamente en el criterio del personal sanitario responsable. 
+                        <br><br>
+                        Los autores de esta página no se hacen responsables de las decisiones clínicas que realice el usuario. 
+                        <br><br>
+                        InsuTOOL es una aplicación diseñada para facilitar el manejo de la terapia insulínica creada por Fundación redGDPS.
+                    </p>
+
+                    <ul class="list">
+                        <li class="item item-toggle" style="border: none; text-align: right; ">
+                            <h3 >Confirmo que soy profesional sanitario para administrar y prescribir medicamentos</h3>
+                            <label class="toggle toggle" >
+                                <input type="checkbox" ng-model="toggleModel.value2" ng-true-value="1" ng-false-value="0">
+                                <div class="track">
+                                    <div class="handle"></div>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <div style="text-align:  center;">
+                        <div class="spacer" style="height: 0px;"></div>
+
+                        <a id="login-button5" class="boton-login" ng-click="hideCard()" ng-show="toggleModel.value2">Acceder</a>
+                        <a id="login-button5" class="boton-login" style="opacity: 0.3;" ng-hide="toggleModel.value2">Acceder</a>
+                    </div>
+                </div>
+        </div>
+        
+        
     </ion-content>
 
 </ion-view>

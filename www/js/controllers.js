@@ -221,6 +221,14 @@ angular.module('app.controllers', [])
                 $scope.css_1 = '';
                 $scope.css_2 = '';
             }
+            
+            $scope.showstartCard = true;
+            $scope.showsecondCard = false;
+
+            $scope.hideCard = function() {
+                $scope.showstartCard = false;
+                $scope.showsecondCard = true;
+            };
         })
 
         .controller('datosCtrl', function ($scope, $stateParams, $http, $state, $ionicLoading, $location, $ionicPopup, $timeout) {

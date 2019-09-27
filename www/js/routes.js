@@ -69,6 +69,15 @@ angular.module('app.routes', [])
                             }
                         }
                     })
+                    .state('menu.informacion', {
+                        url: '/informacion',
+                        views: {
+                            'side-menu21': {
+                                templateUrl: 'templates/acerca/informacion.html'
+                                //controller: 'presentacionCtrl'
+                            }
+                        }
+                    })
                     .state('menu.bibliografia', {
                         url: '/bibliografia',
                         views: {
